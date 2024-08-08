@@ -12,7 +12,6 @@
 }
 
 .project-container h1{
-  /* background-color: #0a192f; */
   font-size: 2.5rem; /* Adjust size as needed */
   font-weight: bold;
   color:#64ffda; /* Dark color for text */
@@ -34,7 +33,7 @@
   border-radius: 8px;
   overflow: hidden;
   margin: 10px;
-  width: 300px;
+  width: 400px;
   height: 400px; /* Adjust height as needed */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   flex-shrink: 0;
@@ -45,6 +44,51 @@
 .card:hover{
   transform: translateY(-15px);
 }
+.view-code-button,
+.open-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-code-button {
+  background-color: #333;
+  color: white;
+}
+
+.view-code-button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.view-code-button:active {
+  background-color: #222;
+  transform: scale(0.98);
+}
+
+.open-button {
+  background-color: #00bcd4;
+  color: white;
+  margin-left: 10px;
+}
+
+.open-button:hover {
+  background-color: #0097a7;
+  transform: scale(1.05);
+}
+
+.open-button:active {
+  background-color: #00796b;
+  transform: scale(0.98);
+}
+
 .card-content {
   padding: 20px;
   overflow-y: auto; /* Enables vertical scrolling */
@@ -52,10 +96,11 @@
 }
 
 .card-image {
-  height: 200px;
+  height: 250px;
   background-size: cover;
   background-position: center;
 }
+
 .card-content::-webkit-scrollbar {
   display: none; /* Hide scrollbar for WebKit (Chrome, Safari, etc.) */
 }

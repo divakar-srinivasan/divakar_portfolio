@@ -7,6 +7,7 @@ import About from "./component/about";
 import Project from "./component/projects";
 import Footer from "./component/footer";
 import Tools from "./component/tools";
+import Certificates from "./component/certificates";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import the AOS CSS for animations
 import "./App.css";
@@ -25,6 +26,7 @@ function App() {
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
   const toolsRef = useRef(null);
+  const certificatesRef = useRef(null);
 
   return (
     <div className="App">
@@ -33,9 +35,10 @@ function App() {
           home: homeRef,
           about: aboutRef,
           skills: skillsRef,
-          Tools: toolsRef,
+          tools: toolsRef,
           project: projectsRef,
           contact: contactRef,
+          certificates: certificatesRef,
         }}
       />
       <Home ref={homeRef} />
@@ -43,6 +46,7 @@ function App() {
       <Skills ref={skillsRef} />
       <Tools ref={toolsRef} />
       <Project ref={projectsRef} />
+      <Certificates ref={certificatesRef} />
       <Contact ref={contactRef} />
       <Footer />
     </div>

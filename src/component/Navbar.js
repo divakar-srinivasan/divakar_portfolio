@@ -39,9 +39,21 @@ const Navbar = ({ sections }) => {
         </div>
         <div
           className="navbar-item"
+          onClick={() => scrollToSection(sections.tools)}
+        >
+          Tools
+        </div>
+        <div
+          className="navbar-item"
           onClick={() => scrollToSection(sections.project)}
         >
           Projects
+        </div>
+        <div
+          className="navbar-item"
+          onClick={() => scrollToSection(sections.certificates)}
+        >
+          Certificates
         </div>
         <div
           className="navbar-item"

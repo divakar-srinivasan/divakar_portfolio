@@ -9,45 +9,20 @@ import figma from "../Images/tools/fig.png";
 import spring from "../Images/tools/spring.png";
 import "../CssComponent/tool.css";
 
-const Tools = () => {
+const Tools = React.forwardRef((props,ref) => {
   const tools = [
-    {
-      img: git,
-      alt: "Git",
-    },
-    {
-      img: aws,
-      alt: "AWS",
-    },
-    {
-      img: netlify,
-      alt: "Netlify",
-    },
-    {
-      img: postman,
-      alt: "Postman",
-    },
-    {
-      img: spring,
-      alt: "spring",
-    },
-    {
-      img: ide,
-      alt: "Spring Tool Suite",
-    },
-    {
-      img: vscode,
-      alt: "VS Code",
-    },
-    {
-      img: figma,
-      alt: "Figma",
-    },
-    // Add more tools as needed
+    {img: git,alt: "Git",},
+    {img: aws,alt: "AWS",},
+    {img: netlify,alt: "Netlify",},
+    {img: postman,alt: "Postman",},
+    {img: spring,alt: "spring",},
+    {img: ide,alt: "Spring Tool Suite",},
+    {img: vscode,alt: "VS Code",},
+    {img: figma,alt: "Figma",},
   ];
 
   return (
-    <div className="tools-container">
+    <div className="tools-container" ref={ref}>
       <h1>Tools</h1>
       <div className="tools-grid"  data-aos="flip-up">
         {tools.map((item, index) => (
@@ -58,6 +33,6 @@ const Tools = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Tools;

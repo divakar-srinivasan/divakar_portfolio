@@ -3,14 +3,14 @@
 
 
 .navbar {
-    /* background: #333; */
     height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     background-color: #0a192f;
-    position: sticky;
+    position: -webkit-sticky; /* For older Safari/iOS support */
+    position: sticky; 
     top: 0;
 
     z-index: 2;
@@ -25,63 +25,48 @@
 
 .navbar-menu {
     display: flex;
-    gap: 60px;
+    gap: 5%;
 }
 
 .navbar-item {
     cursor: pointer;
-    /* Changes cursor to pointer */
-    /* Optional styling to make it look like a button */
     padding: 0.5rem 1rem;
-    /* background-color: #f1f1f1; */
-    /* Light background color */
     border-radius: 5px;
-    /* Rounded corners */
     text-align: center;
-    /* Center text */
     display: inline-block;
     color: white;
-    /* Makes the div fit its content */
-    transition: background-color 0.3s ease;
-    /* Smooth background color transition */
+    transition: background-color 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+    /* Ensure transition applies to background-color, color, and font-size */
 }
 
 .navbar-item:hover {
-    color: #ddd;
+    color: #22ff00;
+    font-size: 20px;
 }
+
 
 .button {
     background-color: #64ffda;
-    /* Green background */
     border: none;
-    /* Remove borders */
-    color: white;
-    /* White text */
-    padding: 15px 32px;
-    /* Some padding */
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    padding: 12px 30px;
     text-align: center;
-    /* Center text */
     text-decoration: none;
-    /* Remove underline */
     display: inline-block;
-    /* Get it to display like a button */
     font-size: 16px;
-    /* Increase font size */
     margin: 4px 2px;
-    /* Add some margin */
     cursor: pointer;
-    /* Add a pointer cursor on hover */
-    transition-duration: 0.4s;
-    /* Add transition effect */
+    transition: background-color 0.3s ease, color 0.3s ease, font-size 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button:hover {
-    background-color: white;
-    /* White background on hover */
-    color: #64ffda;
-    /* Black text on hover */
+    background-color: #0ce061;
+    color: #000000;
+    box-shadow: 0 4px 10    px rgba(203, 255, 17, 0.866);
+    font-size: 17px;
     border: 2px solid #4CAF50;
-    /* Add a green border on hover */
+    transform: scale(1.0);
 }
 
 @media screen and (max-width: 768px) {

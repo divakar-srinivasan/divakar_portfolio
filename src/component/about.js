@@ -1,8 +1,9 @@
 // src/components/ProfileComponent.js
-import React from "react";
+import React,{useState} from "react";
 import "../CssComponent/about.css"; // Import the CSS file
 import img from "../Images/myimg.jpg";
 const About = React.forwardRef((props, ref) => {
+  const [activeTab, setActiveTab] = useState('miniProjects');
   const handleDownload = () => {
     window.open(
       "https://drive.google.com/file/d/11sqF78adatjeDjoGxseu9VnUSwycDUsD/view?usp=sharing"
@@ -30,17 +31,62 @@ const About = React.forwardRef((props, ref) => {
         </div>
       </div>
       <div className="projects-container">
-        <div className="project-card">
-          <h3>3+ Mini Projects</h3>
+        <button
+          className={`projects-card ${activeTab === 'miniProjects' ? 'active' : ''}`}
+          onClick={() => setActiveTab('miniProjects')}
+        >
+          3+ Mini Projects
+        </button>
+        <button
+          className={`projects-card ${activeTab === 'teamProjects' ? 'active' : ''}`}
+          onClick={() => setActiveTab('teamProjects')}
+        >
+          2+ Team Projects
+        </button>
+        <button
+          className={`projects-card ${activeTab === 'realTimeProjects' ? 'active' : ''}`}
+          onClick={() => setActiveTab('realTimeProjects')}
+        >
+          2+ Real Time Projects
+        </button>
+      </div>
+
+      {activeTab === 'miniProjects' && (
+        <div className="about-skills-container">
+        <div className="about-skills-list">
+          <ul>
+            <li>Problem Solving</li>
+
+          </ul>
         </div>
-        <div className="project-card">
-          <h3>2+ Team Projects</h3>
-        </div>
-        <div className="project-card">
-          <h3>2+ Real Time Projects</h3>
+        <div className="about-skills-list">
+          <ul>
+            <li>Adaptability</li>
+
+          </ul>
         </div>
       </div>
-      <div className="about-skills-container">
+      )}
+      {activeTab === 'teamProjects' && (
+        <div className="about-skills-container">
+        <div className="about-skills-list">
+          <ul>
+            <li>Problem Solving</li>
+            <li>Time management</li>
+           
+          </ul>
+        </div>
+        <div className="about-skills-list">
+          <ul>
+            <li>Adaptability</li>
+            <li>Team Leadership</li>
+            
+          </ul>
+        </div>
+      </div>
+      )}
+      {activeTab === 'realTimeProjects' && (
+        <div className="about-skills-container">
         <div className="about-skills-list">
           <ul>
             <li>Problem Solving</li>
@@ -56,6 +102,9 @@ const About = React.forwardRef((props, ref) => {
           </ul>
         </div>
       </div>
+      )}
+
+
       <button onClick={handleDownload} className="resume-button">
         Resume
       </button>

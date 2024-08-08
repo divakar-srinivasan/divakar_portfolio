@@ -14,7 +14,7 @@ const projects = [
     date: "Jul 2023",
     description:
       "A simple and efficient to-do application to manage your daily tasks. Features include task prioritization, reminders, and progress tracking.",
-    link: "#",
+    githubLink: "https://chatgpt.com/",
     imgUrl: todo,
   },
   {
@@ -58,7 +58,6 @@ const projects = [
     imgUrl: saloon,
   },
 ];
-
 const Project = React.forwardRef((props, ref) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -92,6 +91,14 @@ const Project = React.forwardRef((props, ref) => {
                   <h2>{project.title}</h2>
                   <p className="date">{project.date}</p>
                   <p>{project.description}</p>
+                  <div className="button-group">
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                      <button className="view-code-button">View Code</button>
+                    </a>
+                    <a href={project.Link} target="_blank" rel="noopener noreferrer">
+                      <button className="open-button">Open</button>
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
@@ -103,5 +110,4 @@ const Project = React.forwardRef((props, ref) => {
     </div>
   );
 });
-
 export default Project;
