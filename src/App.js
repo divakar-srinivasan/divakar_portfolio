@@ -24,6 +24,7 @@ function App() {
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
+  const toolsRef = useRef(null);
 
   return (
     <div className="App">
@@ -32,6 +33,7 @@ function App() {
           home: homeRef,
           about: aboutRef,
           skills: skillsRef,
+          Tools: toolsRef,
           project: projectsRef,
           contact: contactRef,
         }}
@@ -39,6 +41,7 @@ function App() {
       <Home ref={homeRef} />
       <About ref={aboutRef} />
       <Skills ref={skillsRef} />
+      <Tools ref={toolsRef} />
       <Project ref={projectsRef} />
       <Contact ref={contactRef} />
       <Footer />
